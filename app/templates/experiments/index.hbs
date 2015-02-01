@@ -1,3 +1,15 @@
-experiments!
+Experiments:
+
+<ul class="users-listing">
+  {{#each experiment in controller}}
+      <li>
+        {{#link-to 'experiments.index' experiment}}
+          {{experiment.name}}
+        {{/link-to}}
+      </li>
+    {{else}}
+      <li>no experiments… :-(</li>
+  {{/each}}
+</ul>
 
 {{outlet}}
