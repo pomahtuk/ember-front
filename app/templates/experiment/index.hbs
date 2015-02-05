@@ -1,5 +1,33 @@
-{{controller.name}} -
+{{!--   
+  name          : attr('string'),
+  description   : attr('string'),
+  tag           : attr('string'),
+  variantCount  : attr('number'),
+  trackPercent  : attr('number'),
+  fullOn        : attr('boolean'),
+  goal          : attr('string'),
+  dateCreated   : attr('date') 
+--}}
 
-{{#link-to 'experiment.edit' controller}}Edit experiment{{/link-to}}
+<h3>
+	Experiment name: {{name}}
+  <br/>
+  <div class="experiment-actions">
+    {{#link-to 'experiment.edit' controller class="button tiny"}}Edit{{/link-to}}
+  	<button {{action "delete"}} class="button alert tiny">Delete</button>
+  <div class="experiment-actions">
+</h3>
+<p>Tag name: {{tag}}</p>
+<p>Variants: {{variantCount}}</p>
+<p>Traffic percent: {{trackPercent}}</p>
+<span>Created: {{format-date dateCreated}}</span>
+
+{{#if deleteMode}}
+  <div class="confirm-box">
+    <h4>Really?</h4>
+    <button {{action "confirmDelete"}}> yes </button>
+    <button {{action "cancelDelete"}}> no </button>
+  </div>
+{{/if}}
 
 {{outlet}}

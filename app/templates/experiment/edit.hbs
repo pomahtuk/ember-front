@@ -1,3 +1,89 @@
-editing experiment - "{{name}}"
+{{!--   
+  name          : attr('string'),
+  description   : attr('string'),
+  tag           : attr('string'),
+  variantCount  : attr('number'),
+  trackPercent  : attr('number'),
+  fullOn        : attr('boolean'),
+  goal          : attr('string'),
+  dateCreated   : attr('date') 
+--}}
+
+<form>
+  <fieldset>
+    <legend>
+      {{#if isCreateAction}}
+        New experiment
+      {{else}}
+        Editing experiment
+      {{/if}}
+    </legend>
+
+    <div class="row">
+      <div class="small-8 columns">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">Experiment name</label>
+          </div>
+          <div class="small-9 columns">
+            {{input value=name}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-8 columns">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">Experiment tag</label>
+          </div>
+          <div class="small-9 columns">
+            {{input value=tag}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-8 columns">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">Variant count</label>
+          </div>
+          <div class="small-9 columns">
+            {{input value=variantCount}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-8 columns">
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="right-label" class="right inline">Percent of traffic</label>
+          </div>
+          <div class="small-9 columns">
+            {{input value=trackPercent}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-8 columns">
+        {{#if isCreateAction}}
+          {{#link-to "experiments" class="button tiny"}}Cancel{{/link-to}}
+        {{else}}
+          {{#link-to "experiment.index" controller class="button tiny"}}Cancel{{/link-to}}
+        {{/if}}
+        <button {{action "save"}} class="button tiny success">Save</button>
+      </div>
+    </div>
+
+  </fieldset>
+</form>
+
 
 {{outlet}}

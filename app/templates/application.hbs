@@ -1,3 +1,32 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1>{{#link-to 'experiments.index'}}Laborant - A/B testing solution{{/link-to}}</h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+</nav>
 
-{{outlet}}
+<div class="row">
+  <div class="large-12" role="content">
+    {{outlet}}
+  </div>
+</div>
+
+<hr/>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Ilya Lovriakov.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="https://githun.com/users/pomahtuk">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
