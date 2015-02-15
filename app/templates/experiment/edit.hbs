@@ -1,4 +1,4 @@
-{{!--   
+{{!--
   name          : attr('string'),
   description   : attr('string'),
   tag           : attr('string'),
@@ -6,84 +6,61 @@
   trackPercent  : attr('number'),
   fullOn        : attr('boolean'),
   goal          : attr('string'),
-  dateCreated   : attr('date') 
+  dateCreated   : attr('date')
 --}}
 
-<form>
-  <fieldset>
-    <legend>
-      {{#if isCreateAction}}
-        New experiment
-      {{else}}
-        Editing experiment
-      {{/if}}
-    </legend>
+<div class="row">
+  <h3 class="col s12">
+    {{#if isCreateAction}}
+      New experiment
+    {{else}}
+      Editing experiment
+    {{/if}}
+  </h3>
 
+  <form class="col s12">
     <div class="row">
-      <div class="small-8 columns">
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="right-label" class="right inline">Experiment name</label>
-          </div>
-          <div class="small-9 columns">
-            {{input value=name}}
-          </div>
-        </div>
+      <div class="input-field col s12">
+        {{input value=name}}
+        <label {{bind-attr class="name:active"}}>Experiment Name</label>
       </div>
     </div>
-
     <div class="row">
-      <div class="small-8 columns">
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="right-label" class="right inline">Experiment tag</label>
-          </div>
-          <div class="small-9 columns">
-            {{input value=tag}}
-          </div>
-        </div>
+      <div class="input-field col s12">
+        {{input value=tag}}
+        <label {{bind-attr class="tag:active"}}>Experiment Tag</label>
       </div>
     </div>
-
     <div class="row">
-      <div class="small-8 columns">
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="right-label" class="right inline">Variant count</label>
-          </div>
-          <div class="small-9 columns">
-            {{input value=variantCount}}
-          </div>
-        </div>
+      <div class="input-field col s12 m6">
+        {{input value=variantCount}}
+        <label {{bind-attr class="variantCount:active"}}>Variant count</label>
+      </div>
+      <div class="input-field col s12 m6">
+        {{input value=trackPercent}}
+        <label {{bind-attr class="trackPercent:active"}}>Percent of traffic</label>
       </div>
     </div>
-
     <div class="row">
-      <div class="small-8 columns">
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="right-label" class="right inline">Percent of traffic</label>
-          </div>
-          <div class="small-9 columns">
-            {{input value=trackPercent}}
-          </div>
-        </div>
+      <div class="input-field col s12">
+        {{textarea value=description class="materialize-textarea"}}
+        <label {{bind-attr class="description:active"}}>Description</label>
       </div>
     </div>
-
     <div class="row">
-      <div class="small-8 columns">
+      <div class="right-align">
         {{#if isCreateAction}}
-          {{#link-to "experiments" class="button tiny"}}Cancel{{/link-to}}
+          {{#link-to "experiments" class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
         {{else}}
-          {{#link-to "experiment.index" controller class="button tiny"}}Cancel{{/link-to}}
+          {{#link-to "experiment.index" controller class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
         {{/if}}
-        <button {{action "save"}} class="button tiny success">Save</button>
+        <a href="javascript:void()" {{action "save"}} type="submit" class="waves-effect waves-light btn blue darken-3">
+          Save
+          <i class="mdi-content-send right"></i>
+        </a>
       </div>
     </div>
-
-  </fieldset>
-</form>
-
+  </form>
+</div>
 
 {{outlet}}
