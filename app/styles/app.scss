@@ -1,1 +1,31 @@
 @import 'materialize';
+
+.card-action.custom-actions-style {
+	a {
+		color: #fff;
+	}
+
+	.btn {
+		margin-bottom: 0px;
+		padding-left: 1.3rem;
+	}
+
+}
+
+.btn {
+	&.icon-adjustment-left {
+		padding-left: 1.3rem;
+	}
+	&.icon-adjustment-right {
+		padding-right: 1.3rem;
+	}
+}
+
+.card {
+	.card-minor-details {
+		color: #b3b3b3;
+	}
+	a.card-title {
+		text-transform: none;
+	}
+}

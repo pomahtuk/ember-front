@@ -1,17 +1,46 @@
-Experiments:
+<div class="col s12">
+  Experiments: {{controller.length}}
+</div>
+{{!-- here comes the toolbar --}}
+<div class="col s12">
+  {{#link-to "experiments.create" class="btn waves-effect waves-light icon-adjustment-left"}}
+    <i class="left mdi-content-add"></i>
+    Create experiment
+  {{/link-to}}
+</div>
 
-<ul class="experiments-listing">
-  {{#each experiment in controller}}
-      <li>
-        {{#link-to 'experiment.index' experiment}}
-          {{experiment.name}}
+
+{{#each experiment in controller}}
+  <div class="col s12">
+    <div class="card z-depth-2">
+      <div class="card-content">
+        {{#link-to 'experiment.index' experiment class="card-title blue-text"}}{{experiment.name}}{{/link-to}}
+        <span class="card-minor-details">({{format-date experiment.dateCreated}})</span>
+        <p>{{experiment.description}}</p>
+      </div>
+      <div class="card-action custom-actions-style">
+        <a href='#' class="waves-effect waves-light btn green darken-3">
+          <i class="left mdi-action-done-all"></i>
+          Full-on
+        </a>
+        <a href='#' class="waves-effect waves-light btn yellow darken-3">
+          <i class="left mdi-av-loop"></i>
+          Reset
+        </a>
+        <a href='#' class="waves-effect waves-light btn red darken-3">
+          <i class="left mdi-av-not-interested"></i>
+          Stop
+        </a>
+        {{#link-to 'experiment.edit' experiment class="no-margin-bottom waves-effect waves-light btn blue darken-3"}}
+          <i class="left mdi-action-settings"></i>
+          Edit
         {{/link-to}}
-      </li>
-    {{else}}
-      <li>no experiments… :-(</li>
-  {{/each}}
-</ul>
+      </div>
+    </div>
+  </div>
+{{else}}
+  no experiments… :-(
+{{/each}}
 
-{{#link-to "experiments.create" class="button tiny"}}New{{/link-to}}
 
 {{outlet}}

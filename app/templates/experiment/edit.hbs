@@ -9,58 +9,58 @@
   dateCreated   : attr('date')
 --}}
 
-<div class="row">
-  <h3 class="col s12">
-    {{#if isCreateAction}}
-      New experiment
-    {{else}}
-      Editing experiment
-    {{/if}}
-  </h3>
 
-  <form class="col s12">
-    <div class="row">
-      <div class="input-field col s12">
-        {{input value=name}}
-        <label {{bind-attr class="name:active"}}>Experiment Name</label>
-      </div>
+<h3 class="col s12">
+  {{#if isCreateAction}}
+    New experiment
+  {{else}}
+    Editing experiment
+  {{/if}}
+</h3>
+
+<form class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      {{input value=name}}
+      <label {{bind-attr class="name:active"}}>Experiment Name</label>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        {{input value=tag}}
-        <label {{bind-attr class="tag:active"}}>Experiment Tag</label>
-      </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      {{input value=tag}}
+      <label {{bind-attr class="tag:active"}}>Experiment Tag</label>
     </div>
-    <div class="row">
-      <div class="input-field col s12 m6">
-        {{input value=variantCount}}
-        <label {{bind-attr class="variantCount:active"}}>Variant count</label>
-      </div>
-      <div class="input-field col s12 m6">
-        {{input value=trackPercent}}
-        <label {{bind-attr class="trackPercent:active"}}>Percent of traffic</label>
-      </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 m6">
+      {{input value=variantCount}}
+      <label {{bind-attr class="variantCount:active"}}>Variant count</label>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        {{textarea value=description class="materialize-textarea"}}
-        <label {{bind-attr class="description:active"}}>Description</label>
-      </div>
+    <div class="input-field col s12 m6">
+      {{input value=trackPercent}}
+      <label {{bind-attr class="trackPercent:active"}}>Percent of traffic</label>
     </div>
-    <div class="row">
-      <div class="right-align">
-        {{#if isCreateAction}}
-          {{#link-to "experiments" class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
-        {{else}}
-          {{#link-to "experiment.index" controller class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
-        {{/if}}
-        <a href="javascript:void()" {{action "save"}} type="submit" class="waves-effect waves-light btn blue darken-3">
-          Save
-          <i class="mdi-content-send right"></i>
-        </a>
-      </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      {{textarea value=description class="materialize-textarea"}}
+      <label {{bind-attr class="description:active"}}>Description</label>
     </div>
-  </form>
-</div>
+  </div>
+  <div class="row">
+    <div class="right-align">
+      {{#if isCreateAction}}
+        {{#link-to "experiments" class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
+      {{else}}
+        {{#link-to "experiment.index" controller class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
+      {{/if}}
+      <a href="javascript:void()" {{action "save"}} type="submit" class="waves-effect waves-light btn blue darken-3">
+        Save
+        <i class="mdi-content-send right"></i>
+      </a>
+    </div>
+  </div>
+</form>
+
 
 {{outlet}}
