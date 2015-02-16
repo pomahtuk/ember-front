@@ -1,7 +1,12 @@
 <div class="col s12">
   Experiments: {{controller.length}}
 </div>
-{{!-- here comes the toolbar --}}
+{{!-- 
+  here comes the toolbar
+  actions: 
+    1) show running/all experiments
+    2) show conclusive / all experimnets
+ --}}
 <div class="col s12">
   {{#link-to "experiments.create" class="btn waves-effect waves-light icon-adjustment-left"}}
     <i class="left mdi-content-add"></i>
@@ -15,6 +20,7 @@
     <div class="card z-depth-2">
       <div class="card-content">
         {{#link-to 'experiment.index' experiment class="card-title blue-text"}}{{experiment.name}}{{/link-to}}
+        {{!-- add here action: refresh --}}
         <span class="card-minor-details">({{format-date experiment.dateCreated}})</span>
         <p>{{experiment.description}}</p>
       </div>

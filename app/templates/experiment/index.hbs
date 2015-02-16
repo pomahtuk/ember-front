@@ -11,23 +11,28 @@
 
 <h3>
 	Experiment name: {{name}}
-  <br/>
-  <div class="experiment-actions">
-    {{#link-to 'experiment.edit' controller class="button tiny"}}Edit{{/link-to}}
-  	<button {{action "delete"}} class="button alert tiny">Delete</button>
-  <div class="experiment-actions">
 </h3>
+<div class="experiment-actions">
+  {{#link-to 'experiment.edit' controller class="button tiny"}}Edit{{/link-to}}
+  <a class="waves-effect waves-light btn modal-trigger" {{action "delete"}}>Delete</a>
+</div>
 <p>Tag name: {{tag}}</p>
 <p>Variants: {{variantCount}}</p>
 <p>Traffic percent: {{trackPercent}}</p>
 <span>Created: {{format-date dateCreated}}</span>
 
 {{#if deleteMode}}
-  <div class="confirm-box">
-    <h4>Really?</h4>
-    <button {{action "confirmDelete"}}> yes </button>
-    <button {{action "cancelDelete"}}> no </button>
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" {{action "confirmDelete"}} class="waves-effect waves-light btn modal-action modal-close">Agree</a>
+      <a href="#" {{action "cancelDelete"}} class="waves-effect waves-light btn modal-action modal-close">Disagree</a>
+    </div>
   </div>
 {{/if}}
+
 
 {{outlet}}
