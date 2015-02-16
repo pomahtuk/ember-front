@@ -18,7 +18,8 @@
   {{/if}}
 </h3>
 
-<form class="col s12">
+<form class="col s12 card">
+  <br/>
   <div class="row">
     <div class="input-field col s12">
       {{input value=name}}
@@ -49,7 +50,7 @@
   </div>
   <div class="row">
     <div class="right-align">
-      <a href="javascript:void(0)" {{action "cancel" }} class="waves-effect waves-light btn red">
+      <a href="javascript:void(0)" {{action "cancel"}} class="waves-effect waves-light white-text btn red">
         Cancel
       </a>
       <label for="submitForm" {{action "save"}} class="waves-effect waves-light btn blue darken-3">
