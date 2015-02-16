@@ -7,6 +7,12 @@ export default Ember.ObjectController.extend({
       var experiment = this.get('model');
       experiment.save();
       this.transitionToRoute('experiment', experiment);
-    }
+    },
+	cancel: function () {
+      var experiment = this.get('model');
+      experiment.deleteRecord();
+      experiment.save();
+      this.transitionToRoute('experiments.index');
+	}    
   }
 });

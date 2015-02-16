@@ -49,15 +49,14 @@
   </div>
   <div class="row">
     <div class="right-align">
-      {{#if isCreateAction}}
-        {{#link-to "experiments" class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
-      {{else}}
-        {{#link-to "experiment.index" controller class="waves-effect waves-light btn red"}}Cancel{{/link-to}}
-      {{/if}}
-      <a href="javascript:void()" {{action "save"}} type="submit" class="waves-effect waves-light btn blue darken-3">
+      <a href="javascript:void(0)" {{action "cancel" }} class="waves-effect waves-light btn red">
+        Cancel
+      </a>
+      <label for="submitForm" {{action "save"}} class="waves-effect waves-light btn blue darken-3">
         Save
         <i class="mdi-content-send right"></i>
-      </a>
+        <input id="submitForm" type="submit" value="go" class="hidden" />
+      </label>
     </div>
   </div>
 </form>
