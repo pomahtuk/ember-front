@@ -1,0 +1,28 @@
+<div class="col s12">
+  <div class="card">
+    <div class="card-content">
+      {{#link-to 'experiment.index' experiment class="card-title blue-text"}}{{experiment.name}}{{/link-to}}
+      {{!-- add here action: refresh --}}
+      <span class="card-minor-details">({{format-date experiment.dateCreated}})</span>
+      <p>{{experiment.description}}</p>
+    </div>
+    <div class="card-action custom-actions-style">
+      <a href='#' class="waves-effect waves-light btn green darken-3">
+        <i class="left mdi-action-done-all"></i>
+        Full-on
+      </a>
+      <a href='#' class="waves-effect waves-light btn yellow darken-3">
+        <i class="left mdi-av-loop"></i>
+        Reset
+      </a>
+      <a href='#' class="waves-effect waves-light btn red darken-3">
+        <i class="left mdi-av-not-interested"></i>
+        Stop
+      </a>
+      {{#link-to 'experiment.edit' experiment class="no-margin-bottom waves-effect waves-light btn blue darken-3"}}
+        <i class="left mdi-action-settings"></i>
+        Edit
+      {{/link-to}}
+    </div>
+  </div>
+</div>

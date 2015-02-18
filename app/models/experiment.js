@@ -40,7 +40,7 @@ Experiment.reopenClass({
     {
       id            : '2',
       name          : 'Buy button copy',
-      description   : 'Sample Experiment with buy button and copy text',
+      description   : 'One common flaw we\'ve seen in many frameworks is a lack of support for truly responsive text. While elements on the page resize fluidly, text still resizes on a fixed basis. To ameliorate this problem, for text heavy pages, we\'ve created a class that fluidly scales text size and line-height to optimize readability for the user. Line length stays between 45-80 characters and line height scales to be larger on smaller screens.',
       tag           : 'buy_button_copy',
       variantCount  : 2,
       trackPercent  : 100,

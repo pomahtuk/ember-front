@@ -18,46 +18,48 @@
   {{/if}}
 </h3>
 
-<form class="col s12 card">
-  <br/>
-  <div class="row">
-    <div class="input-field col s12">
-      {{input value=name}}
-      <label {{bind-attr class="name:active"}}>Experiment Name</label>
+<form class="col s12">
+  <div class="card">
+    <br/>
+    <div class="row">
+      <div class="input-field col s12">
+        {{input value=name}}
+        <label {{bind-attr class="name:active"}}>Experiment Name</label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      {{input value=tag}}
-      <label {{bind-attr class="tag:active"}}>Experiment Tag</label>
+    <div class="row">
+      <div class="input-field col s12">
+        {{input value=tag}}
+        <label {{bind-attr class="tag:active"}}>Experiment Tag</label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12 m6">
-      {{input value=variantCount}}
-      <label {{bind-attr class="variantCount:active"}}>Variant count</label>
+    <div class="row">
+      <div class="input-field col s12 m6">
+        {{input value=variantCount}}
+        <label {{bind-attr class="variantCount:active"}}>Variant count</label>
+      </div>
+      <div class="input-field col s12 m6">
+        {{input value=trackPercent}}
+        <label {{bind-attr class="trackPercent:active"}}>Percent of traffic</label>
+      </div>
     </div>
-    <div class="input-field col s12 m6">
-      {{input value=trackPercent}}
-      <label {{bind-attr class="trackPercent:active"}}>Percent of traffic</label>
+    <div class="row">
+      <div class="input-field col s12">
+        {{textarea value=description class="materialize-textarea"}}
+        <label {{bind-attr class="description:active"}}>Description</label>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="input-field col s12">
-      {{textarea value=description class="materialize-textarea"}}
-      <label {{bind-attr class="description:active"}}>Description</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="right-align">
-      <a href="javascript:void(0)" {{action "cancel"}} class="waves-effect waves-light white-text btn red">
-        Cancel
-      </a>
-      <label for="submitForm" {{action "save"}} class="waves-effect waves-light btn blue darken-3">
-        Save
-        <i class="mdi-content-send right"></i>
-        <input id="submitForm" type="submit" value="go" class="hidden" />
-      </label>
+    <div class="row">
+      <div class="right-align col s12">
+        <a href="javascript:void(0)" {{action "cancel"}} class="waves-effect waves-light white-text btn red">
+          Cancel
+        </a>
+        <label for="submitForm" {{action "save"}} class="waves-effect waves-light btn blue darken-3">
+          Save
+          <i class="mdi-content-send right"></i>
+          <input id="submitForm" type="submit" value="go" class="hidden" />
+        </label>
+      </div>
     </div>
   </div>
 </form>
