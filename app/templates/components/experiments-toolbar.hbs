@@ -1,0 +1,27 @@
+<div class="col s12">
+  <div class="experiments-toolbar card-panel">
+    <span class="experiment-toolbar-header float-left">All Experiments ({{data.length}})</span>
+    <div class="experiment-toolbar-controls float-right">
+      <a href="javascript:void(0)" {{action "filterRunning"}} class="waves-effect waves-light btn-floating white">
+        <i class="small mdi-av-play-circle-outline grey-text text-darken-2"></i>
+      </a>
+      &nbsp;
+      <a href="javascript:void(0)" {{action "filterConclusive"}} class="waves-effect waves-light btn-floating white">
+        <i class="small mdi-action-trending-up grey-text text-darken-2"></i>
+      </a>
+      
+      <div class="experiment-toolbar-separator">&nbsp;</div>
+      {{#link-to "experiments.create" class="no-margin btn waves-effect waves-light icon-adjustment-left hide-on-small-only"}}
+        <i class="left mdi-content-add"></i>
+        Create
+      {{/link-to}}
+      {{#link-to "experiments.create" class="btn-floating waves-effect waves-light hide-on-med-and-up"}}
+        <i class="left mdi-content-add"></i>
+      {{/link-to}}
+    </div>
+  </div>
+</div>
+
+
+
+{{yield}}

@@ -1,19 +1,4 @@
-<div class="col s12">
-  Experiments: {{controller.length}}
-</div>
-{{!--
-  here comes the toolbar
-  actions:
-    1) show running/all experiments
-    2) show conclusive / all experimnets
- --}}
-<div class="col s12">
-  {{#link-to "experiments.create" class="btn waves-effect waves-light icon-adjustment-left"}}
-    <i class="left mdi-content-add"></i>
-    Create
-  {{/link-to}}
-</div>
-
+{{experiments-toolbar data=controller}}
 
 {{#each experiment in controller}}
   {{single-experiment experiment=experiment}}

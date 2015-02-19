@@ -9,17 +9,28 @@
   dateCreated   : attr('date') 
 --}}
 
-<h3>
-	Experiment name: {{name}}
-</h3>
-<div class="experiment-actions">
-  {{#link-to 'experiment.edit' controller class="button tiny"}}Edit{{/link-to}}
-  <a class="waves-effect waves-light btn modal-trigger" {{action "delete"}}>Delete</a>
+<div class="col s12">
+  <div class="card">
+    <div class="card-content">
+      <h4 class="card-title black-text">{{name}}</h4>
+      <div class="experiment-actions">
+        {{#link-to 'experiment.edit' controller class="waves-effect waves-light btn-floating white-text blue darken-3"}}
+          <i class="left mdi-action-settings"></i>
+        {{/link-to}}
+        <a class="waves-effect waves-light btn-floating modal-trigger white-text red darken-3" {{action "delete"}}>
+          <i class="left mdi-action-delete"></i>
+        </a>
+      </div>
+      <div class="experiment-details">
+        <p>Tag name: {{tag}}</p>
+        <p>Variants: {{variantCount}}</p>
+        <p>Traffic percent: {{trackPercent}}</p>
+        <span>Created: {{format-date dateCreated}}</span>
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </div>
 </div>
-<p>Tag name: {{tag}}</p>
-<p>Variants: {{variantCount}}</p>
-<p>Traffic percent: {{trackPercent}}</p>
-<span>Created: {{format-date dateCreated}}</span>
 
 {{#if deleteMode}}
   <div id="deleteModal" class="modal">
