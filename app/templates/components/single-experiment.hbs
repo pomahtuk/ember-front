@@ -4,21 +4,25 @@
       {{#link-to 'experiment.index' experiment class="card-title blue-text"}}{{experiment.name}}{{/link-to}}
       {{!-- add here action: refresh --}}
       <span class="card-minor-details">({{format-date experiment.dateCreated}})</span>
-      <div class="card-graph-temp-img" style="background-image: url(http://placehold.it/600x100.png&text=here+comes+the+graph+in+future);"></div>
       {{!-- good idea - add some graph here --}}
+      <a href="javascript:void(0)" {{action "updateData"}} class="float-right no-margin waves-effect waves-circle btn-floating white">
+        <i class="small mdi-action-settings-backup-restore grey-text text-darken-2"></i>
+      </a>
+      {{!--  --}}
+      <div class="card-graph-temp-img" style="background-image: url(http://placehold.it/600x100.png&text=here+comes+the+graph+in+future);"></div>
       <p>{{experiment.description}}</p>
     </div>
     <div class="card-action custom-actions-style align-right">
-      <a href='#' class="waves-effect waves-light btn-floating green darken-3">
+      <a href='#' class="waves-effect waves-light waves-circle btn-floating green darken-3">
         <i class="left mdi-action-done-all"></i>
       </a>
-      <a href='#' class="waves-effect waves-light btn-floating yellow darken-3">
+      <a href='#' class="waves-effect waves-light waves-circle btn-floating yellow darken-3">
         <i class="left mdi-av-loop"></i>
       </a>
-      <a href='#' class="waves-effect waves-light btn-floating red darken-3">
+      <a href='#' class="waves-effect waves-light waves-circle btn-floating red darken-3">
         <i class="left mdi-av-not-interested"></i>
       </a>
-      {{#link-to 'experiment.edit' experiment class="waves-effect waves-light btn-floating blue darken-3"}}
+      {{#link-to 'experiment.edit' experiment class="waves-effect waves-circle waves-light btn-floating blue darken-3"}}
         <i class="left mdi-action-settings"></i>
       {{/link-to}}
     </div>

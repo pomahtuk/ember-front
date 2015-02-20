@@ -15,9 +15,30 @@ body {
   background: rgb(237,237,237);
 }
 
+
+nav {
+  .brand-logo-image {
+    display: inline-block;
+    height: $navbar-height-mobile * 0.6;
+  }
+  .brand-logo > * {
+    vertical-align: middle;
+  }
+}
+
+@media #{$medium-and-up} {
+  nav .brand-logo-image {
+    height: $navbar-height * 0.6;
+  }
+}
+
 .card-action.custom-actions-style {
   a {
     color: #fff;
+
+    &:last-child {
+      margin-right: 0px;
+    }
   }
 
   .btn {
