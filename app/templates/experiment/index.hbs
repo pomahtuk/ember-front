@@ -17,7 +17,7 @@
         {{#link-to 'experiment.edit' controller class="waves-effect waves-light btn-floating white-text blue darken-3"}}
           <i class="left mdi-action-settings"></i>
         {{/link-to}}
-        <a class="waves-effect waves-light btn-floating modal-trigger white-text red darken-3" {{action "delete"}}>
+        <a href="#deleteModal" class="waves-effect waves-light btn-floating modal-trigger white-text red darken-3">
           <i class="left mdi-action-delete"></i>
         </a>
       </div>
@@ -32,18 +32,16 @@
   </div>
 </div>
 
-{{#if deleteMode}}
-  <div id="deleteModal" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#" {{action "confirmDelete"}} class="waves-effect waves-light btn modal-action modal-close">Agree</a>
-      <a href="#" {{action "cancelDelete"}} class="waves-effect waves-light btn modal-action modal-close">Disagree</a>
-    </div>
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
   </div>
-{{/if}}
+  <div class="modal-footer">
+    <a href="#" {{action "confirmDelete"}} class="waves-effect waves-red btn-flat modal-action modal-close">Agree</a>
+    <a href="#" {{action "cancelDelete"}} class="waves-effect waves-red btn-flat modal-action modal-close">Disagree</a>
+  </div>
+</div>
 
 
 {{outlet}}

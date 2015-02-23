@@ -4,11 +4,11 @@
     <span class="experiment-toolbar-header float-left">All Experiments ({{data.length}})</span>
 
     <div class="experiment-toolbar-controls float-right">
-      <a href="javascript:void(0)" {{action "filterRunning"}} class="waves-effect waves-circle btn-floating white hide-on-small-only" data-toggle="tooltip" data-placement="bottom" title="Show running only">
+      <a href="javascript:void(0)" {{action "filterRunning"}} class="waves-effect waves-circle btn-floating white hide-on-small-only tooltipped" data-position="bottom" data-tooltip="Show running only">
         <i class="small mdi-av-play-circle-outline grey-text text-darken-2"></i>
       </a>
       &nbsp;
-      <a href="javascript:void(0)" {{action "filterConclusive"}} class="waves-effect waves-circle btn-floating white hide-on-small-only" data-toggle="tooltip" data-placement="bottom" title="Show conclusive only">
+      <a href="javascript:void(0)" {{action "filterConclusive"}} class="waves-effect waves-circle btn-floating white hide-on-small-only tooltipped" data-position="bottom" data-tooltip="Show conclusive only">
         <i class="small mdi-action-trending-up grey-text text-darken-2"></i>
       </a>
 
@@ -18,7 +18,7 @@
         <i class="left mdi-content-add"></i>
         Create
       {{/link-to}}
-      {{#link-to "experiments.create" class="btn-floating waves-effect waves-light waves-circle hide-on-med-and-up" data-toggle="tooltip" data-placement="bottom" title="Create"}}
+      {{#link-to "experiments.create" class="btn-floating waves-effect waves-light waves-circle hide-on-med-and-up tooltipped" data-position="bottom" data-tooltip="Create"}}
         <i class="left mdi-content-add"></i>
       {{/link-to}}
     </div>

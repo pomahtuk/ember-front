@@ -18,7 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 // vendor
-app.import('vendor/tooltip.js');
 
 // bower
 app.import('bower_components/moment/moment.js');
