@@ -5,7 +5,7 @@
       {{!-- add here action: refresh --}}
       <span class="card-minor-details">({{format-date experiment.dateCreated}})</span>
       {{!-- good idea - add some graph here --}}
-      <a href="javascript:void(0)" {{action "updateData"}} class="float-right no-margin waves-effect waves-circle btn-floating white" data-toggle="tooltip" data-placement="top" title="Refresh data">
+      <a href="javascript:void(0)" {{action "updateData"}} class="refresh-data-button waves-effect waves-circle btn-floating white" data-toggle="tooltip" data-placement="bottom" title="Refresh data">
         <i class="small mdi-action-settings-backup-restore grey-text text-darken-2"></i>
       </a>
       {{!--  --}}
@@ -13,16 +13,16 @@
       <p>{{experiment.description}}</p>
     </div>
     <div class="card-action custom-actions-style align-right">
-      <a href='#' class="waves-effect waves-light waves-circle btn-floating green darken-3" data-toggle="tooltip" data-placement="top" title="Put full-on">
+      <a href='#' class="waves-effect waves-light waves-circle btn-floating green darken-3" data-toggle="tooltip" data-placement="bottom" title="Put full-on">
         <i class="left mdi-action-done-all"></i>
       </a>
-      <a href='#' class="waves-effect waves-light waves-circle btn-floating yellow darken-3" data-toggle="tooltip" data-placement="top" title="Reset">
+      <a href='#' class="waves-effect waves-light waves-circle btn-floating yellow darken-3" data-toggle="tooltip" data-placement="bottom" title="Reset">
         <i class="left mdi-av-loop"></i>
       </a>
-      <a href='#' class="waves-effect waves-light waves-circle btn-floating red darken-3" data-toggle="tooltip" data-placement="top" title="Stop">
+      <a href='#' class="waves-effect waves-light waves-circle btn-floating red darken-3" data-toggle="tooltip" data-placement="bottom" title="Stop">
         <i class="left mdi-av-not-interested"></i>
       </a>
-      {{#link-to 'experiment.edit' experiment class="waves-effect waves-circle waves-light btn-floating blue darken-3" data-toggle="tooltip" data-placement="top" title="Edit"}}
+      {{#link-to 'experiment.edit' experiment class="waves-effect waves-circle waves-light btn-floating blue darken-3" data-toggle="tooltip" data-placement="bottom" title="Edit"}}
         <i class="left mdi-action-settings"></i>
       {{/link-to}}
     </div>

@@ -16,7 +16,6 @@ body {
   background: rgb(237,237,237);
 }
 
-
 nav {
   .brand-logo-image {
     display: inline-block;
@@ -76,6 +75,12 @@ nav {
   .btn, .btn-large, .btn-flat {
     margin: 6px 0 0 15px;
   }
+}
+
+.refresh-data-button {
+  position: absolute;
+  top: 20px;
+  right: 0px;
 }
 
 .card-graph-temp-img {
