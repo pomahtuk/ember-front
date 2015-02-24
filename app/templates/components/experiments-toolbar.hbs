@@ -1,7 +1,7 @@
 <div class="col s12">
   <div class="experiments-toolbar card-panel">
     {{!-- this must be an input field --}}
-    <span class="experiment-toolbar-header float-left">All Experiments ({{data.length}})</span>
+    <span class="experiment-toolbar-header float-left">{{data.totalText}}</span>
 
     <div class="experiment-toolbar-controls float-right">
       <a href="javascript:void(0)" {{action "filterRunning"}} class="waves-effect waves-circle btn-floating white hide-on-small-only tooltipped" data-position="bottom" data-tooltip="Show running only">
