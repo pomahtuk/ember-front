@@ -1,28 +1,27 @@
 .experiments-toolbar {
-	height: 54px;
-	line-height: 52px;
-	padding: 0px 20px !important;
-	vertical-align: middle;
+  height: 54px;
+  line-height: 52px;
+  padding: 0px 20px !important;
+  vertical-align: middle;
 
-	.experiment-toolbar-header {
-		display: inline-block;
-		vertical-align: middle;
-	}
+  .experiment-toolbar-header {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-	.experiment-toolbar-separator {
-		background-color: rgba(0, 0, 0, 0.175);
-		display: inline-block;
-		height: 32px;
-		margin: 0 1rem;
-		position: relative;
-		top: 12px;
-		width: 1px;
-	}
+  .experiment-toolbar-separator {
+    background-color: rgba(0, 0, 0, 0.175);
+    display: inline-block;
+    height: 32px;
+    margin: 0 1rem;
+    position: relative;
+    top: 12px;
+    width: 1px;
+  }
 
-	.experiment-toolbar-controls {
-		& > a {
-			vertical-align: middle;
-		}
-	}
-
+  .experiment-toolbar-controls {
+    & > a {
+      vertical-align: middle;
+    }
+  }
 }

@@ -93,3 +93,15 @@ nav {
 .tabs.blue-tabs .indicator{
   background-color: #90caf9;
 }
+
+
+// Logo
+.brand-logo.own-centerd {
+  &.center {
+    @include transform(translate(-50%, 0%));
+  }
+
+  @media #{$medium-and-down} {
+    @include transform(translate(-50%, 0%));
+  }
+}
