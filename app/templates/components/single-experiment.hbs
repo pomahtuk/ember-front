@@ -8,8 +8,7 @@
       <a href="javascript:void(0)" {{action "updateData"}} class="refresh-data-button waves-effect waves-circle btn-floating white tooltipped" data-position="bottom" data-tooltip="Refresh data">
         <i class="small mdi-action-settings-backup-restore grey-text text-darken-2"></i>
       </a>
-      {{!--  --}}
-      <div class="card-graph-temp-img" style="background-image: url(http://placehold.it/600x100.png&text=here+comes+the+graph+in+future);"></div>
+      {{c3-basic-graph data=experiment.variants}}
       <p>{{experiment.description}}</p>
     </div>
     <div class="card-action custom-actions-style align-right">

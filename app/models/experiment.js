@@ -21,7 +21,12 @@ Experiment = DS.Model.extend({
   trackPercent  : attr('number'),
   fullOn        : attr('boolean'),
   goal          : attr('string'),
-  dateCreated   : attr('date')
+  dateCreated   : attr('date'),
+  variants      : attr({
+    x: attr('string'),
+    columns: attr('array'),
+    type: attr('string')
+  })
 });
 
 Experiment.reopenClass({
@@ -35,7 +40,16 @@ Experiment.reopenClass({
       trackPercent  : 100,
       fullOn        : false,
       goal          : '11111',
-      dateCreated   : (new Date()).toString()
+      dateCreated   : (new Date()).toString(),
+      variants      : {
+        x: 'x',
+        columns: [
+          ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+          ['base', 0.1, 0.09, 0.08, 0.09, 0.11, 0.10],
+          ['variant 1', 0.12, 0.08, 0.09, 0.10, 0.10, 0.12]
+        ],
+        type: 'spline'
+      }
     },
     {
       id            : '2',
@@ -46,7 +60,16 @@ Experiment.reopenClass({
       trackPercent  : 100,
       fullOn        : false,
       goal          : '22222',
-      dateCreated   : (new Date()).toString()
+      dateCreated   : (new Date()).toString(),
+      variants      : {
+        x: 'x',
+        columns: [
+          ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+          ['base', 30, 200, 100, 400, 150, 250],
+          ['variant 1', 50, 20, 10, 40, 15, 25]
+        ],
+        type: 'spline'
+      }
     },
   ]
 });

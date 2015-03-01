@@ -21,5 +21,8 @@ var app = new EmberApp();
 
 // bower
 app.import('bower_components/moment/moment.js');
+app.import('bower_components/d3/d3.js');
+app.import('bower_components/c3/c3.js');
+app.import('bower_components/c3/c3.css');
 
 module.exports = app.toTree();
