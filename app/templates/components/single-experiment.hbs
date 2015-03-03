@@ -8,7 +8,7 @@
       <a href="javascript:void(0)" {{action "updateData"}} class="refresh-data-button waves-effect waves-circle btn-floating white tooltipped" data-position="bottom" data-tooltip="Refresh data">
         <i class="small mdi-action-settings-backup-restore grey-text text-darken-2"></i>
       </a>
-      {{c3-basic-graph data=experiment.variants}}
+      {{c3-basic-graph data=experiment.variants settings=graphSettings}}
       <p>{{experiment.description}}</p>
     </div>
     <div class="card-action custom-actions-style align-right">

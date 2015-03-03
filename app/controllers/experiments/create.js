@@ -13,6 +13,6 @@ export default Ember.ObjectController.extend({
       experiment.deleteRecord();
       experiment.save();
       this.transitionToRoute('experiments.index');
-	}    
+    }    
   }
 });

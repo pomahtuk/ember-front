@@ -5,5 +5,26 @@ export default Ember.ArrayController.extend({
   sortAscending: true, // false for descending
   totalText: function() {
     return 'All Experiments' + ' (' + this.get('model').content.length + ')';
-  }.property('model')
+  }.property('model'),
+  graphSettings: {
+    axis: {
+      x: {
+        type: 'timeseries',
+        tick: {
+          format: '%Y-%m-%d'
+        }
+      },
+      y : {
+        tick: {
+          format: d3.format(',%')
+        }
+      }
+    },
+    legend: {
+      position: 'inset',
+      inset: {
+        anchor: 'top-right'
+      }
+    }
+  }
 });

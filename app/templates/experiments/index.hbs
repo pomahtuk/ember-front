@@ -1,7 +1,7 @@
 {{experiments-toolbar data=controller}}
 
 {{#each experiment in controller}}
-  {{single-experiment experiment=experiment}}
+  {{single-experiment experiment=experiment graphSettings=controller.graphSettings}}
 {{else}}
   no experiments… :-(
 {{/each}}
