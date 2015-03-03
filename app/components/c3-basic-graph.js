@@ -1,4 +1,4 @@
-/* global c3, d3 */
+/* global c3 */
 
 import Ember from 'ember';
 
@@ -93,8 +93,16 @@ export default Ember.Component.extend({
   ),
 
   /**
-  Data Observer
-  */
+   * Initial initialization
+   */
+  didInsertElement: function() {
+    // cunstruct C3 graph
+    this.get('chart');
+  },
+
+  /**
+   * Data Observer
+   */
   dataDidChange: function() {
     var chart = this.get('chart');
     chart.load(this.get('data'));
