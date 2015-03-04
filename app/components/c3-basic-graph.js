@@ -1,35 +1,58 @@
-/* global c3 */
+/* global c3, d3, $ */
 
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  /**
-  Element tag name
-  */
+  /*
+   * Element tag name
+   */
   tagName: 'div',
 
-  /**
-  Element classes
-  */
+  /*
+   * Element classes
+   */
   classNames: ['c3-basic-graph'],
 
-  /**
-  The data to display
-  */
+  /*
+   * The data to display
+   */
   data: {},
 
-  /**
-   Graph settings
+  /*
+   * Graph settings
    */
   settings: {},
 
-  /**
-  */
+  /*
+   * Defaulte settings
+   */
+  defaults: {
+    axis: {
+      x: {
+        type: 'timeseries',
+        tick: {
+          format: '%Y-%m-%d'
+        }
+      },
+      y : {
+        tick: {
+          format: d3.format(',%')
+        }
+      }
+    },
+    legend: {
+      position: 'inset',
+      inset: {
+        anchor: 'top-right'
+      }
+    }
+  },
+
   _chart: undefined,
 
-  /**
-  The Chart
-  */
+  /*
+   * The Chart
+   */
   chart: function() {
     if (Ember.isEqual(this.get('_chart'), undefined)) {
       // Empty, create it.
@@ -54,45 +77,27 @@ export default Ember.Component.extend({
     }
   }.property('element', '_config'),
 
-  /**
-   * configuration generation function
-  */
+  /*
+   * Configuration generation function
+   */
   _config: function() {
-    var self = this,
-      data = self.get('data'),
-      settings = self.get('settings'),
+    var data = this.get('data'),
+      settings = this.get('settings'),
+      defaults = this.get('defaults'),
       resultingSet;
 
-    // using empty object as default values
-    resultingSet = {
+    resultingSet = $.extend({
       data: data,
-      // binding to an element
-      bindto: self.get('element'),
-      axis: settings.axis || {},
-      regions: settings.regions || {},
-      bar: settings.bar || {},
-      pie: settings.pie || {},
-      donut: settings.donut || {},
-      gauge: settings.gauge || {},
-      grid: settings.grid || {},
-      legend: settings.legend || {},
-      tooltip: settings.tooltip || {},
-      subchart: settings.subchart || {},
-      zoom: settings.zoom || {},
-      size: settings.size || {},
-      padding: settings.padding || {},
-      color: settings.color || {},
-      transition: settings.transition || {}
-    };
+      bindto: this.get('element')
+    }, defaults, settings);
 
     return resultingSet;
-    // we need data and setting properties to be set
   }.property(
     'data',
     'settings'
   ),
 
-  /**
+  /*
    * Initial initialization
    */
   didInsertElement: function() {
@@ -100,7 +105,7 @@ export default Ember.Component.extend({
     this.get('chart');
   },
 
-  /**
+  /*
    * Data Observer
    */
   dataDidChange: function() {
@@ -109,41 +114,3 @@ export default Ember.Component.extend({
   }.observes('data').on('didInsertElement')
 
 });
-
-// defaults i am aiming to
-// {
-//   "bindto":"#BookingGraph_C3_1",
-//   "axis":{
-//     "y":{
-//       "tick":{},
-//       "padding":{
-//         "bottom":0.03,
-//         "unit":"ratio"
-//       }
-//     },
-//     "x":{
-//       "type":"timeseries",
-//       "min":1425283980000,
-//       "max":1425287640000,
-//       "tick":{
-//         "fit":false
-//       }
-//     }
-//   },
-//   "transition":{
-//     "duration":0
-//   },
-//   "tooltip":{
-//     "format":{}
-//   },
-//   "point":{
-//     "show":false
-//   },
-//   "legend":{
-//     "position":"inset",
-//     "inset":{
-//       "anchor":"top-right"
-//     }
-//   },
-//   "data":{}
-// }
