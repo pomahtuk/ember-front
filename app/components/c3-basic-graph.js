@@ -1,4 +1,4 @@
-/* global c3, d3, $ */
+/* global c3, $ */
 
 import Ember from 'ember';
 
@@ -19,11 +19,6 @@ export default Ember.Component.extend({
   data: {},
 
   /*
-   * Graph settings
-   */
-  settings: {},
-
-  /*
    * Defaulte settings
    */
   defaults: {
@@ -33,11 +28,6 @@ export default Ember.Component.extend({
         tick: {
           format: '%Y-%m-%d'
         }
-      },
-      y : {
-        tick: {
-          format: d3.format(',%')
-        }
       }
     },
     legend: {
@@ -46,6 +36,11 @@ export default Ember.Component.extend({
         anchor: 'top-right'
       }
     }
+  },
+
+  defaultData: {
+    type: 'spline',
+    x: 'x'
   },
 
   _chart: undefined,
@@ -82,19 +77,22 @@ export default Ember.Component.extend({
    */
   _config: function() {
     var data = this.get('data'),
-      settings = this.get('settings'),
+      defaultData = this.get('defaultData'),
       defaults = this.get('defaults'),
-      resultingSet;
+      resultingSet, resultingData;
+
+    resultingData = $.extend(defaultData, data);
 
     resultingSet = $.extend({
-      data: data,
+      data: resultingData,
       bindto: this.get('element')
-    }, defaults, settings);
+    }, defaults);
 
     return resultingSet;
   }.property(
     'data',
-    'settings'
+    'defaultData',
+    'defaults'
   ),
 
   /*
