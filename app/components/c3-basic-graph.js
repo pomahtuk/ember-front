@@ -58,13 +58,17 @@ export default Ember.Component.extend({
         return undefined;
       } else {
         // getting the config
-        var config = this.get('_config'),
-          // actually generating chart
-          chart = c3.generate(config);
+        var chart,
+          config = this.get('_config');
 
-        // updating the component
-        this.set('_chart', chart);
-        return chart;
+        // actually generating chart
+        if (config.data.url || config.data.json || config.data.rows || config.data.columns) {
+          chart = c3.generate(config);
+          // updating the component
+          this.set('_chart', chart);
+          return chart;
+        }
+        return null;
       }
     } else {
       // Editor is already created and cached.
@@ -108,7 +112,9 @@ export default Ember.Component.extend({
    */
   dataDidChange: function() {
     var chart = this.get('chart');
-    chart.load(this.get('data'));
+    if (chart) {
+      chart.load(this.get('data'));
+    }
   }.observes('data').on('didInsertElement')
 
 });

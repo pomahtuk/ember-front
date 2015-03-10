@@ -35,11 +35,13 @@ export default Ember.ObjectController.extend({
       this.set('deleteMode', false);
     },
     confirmDelete: function(){
-      var experiment = this.get('model');
-      experiment.deleteRecord();
-      experiment.save();
-      this.transitionToRoute('experiments');
+      var experiment = this.get('model'),
+        that = this;
       this.set('deleteMode', false);
+      experiment.deleteRecord();
+      experiment.save().then(function() {
+        that.transitionToRoute('experiments');
+      });
     }
   }
 });
