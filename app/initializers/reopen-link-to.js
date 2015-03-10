@@ -1,14 +1,5 @@
 import Ember from 'ember';
 
-export function initialize(/* container, application */) {
-  // application.inject('route', 'foo', 'service:foo');
-}
-
-// export default {
-//   name: 'reopen-link-to',
-//   initialize: initialize
-// };
-
 export default {
   name: 'link-to-configuration',
   initialize: function() {

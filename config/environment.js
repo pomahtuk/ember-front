@@ -12,7 +12,6 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
@@ -21,11 +20,13 @@ module.exports = function(environment) {
       'style-src': "'self' 'unsafe-inline'",
       'img-src': "'self' placehold.it"
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
+    },
   };
 
   if (environment === 'development') {
