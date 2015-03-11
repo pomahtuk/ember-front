@@ -9,9 +9,10 @@ Router.map(function() {
   this.resource('experiments', function() {
     this.route('create', { path: '/new' });
     this.resource('experiment', {path: '/:experiment_id'}, function() {
-	    this.route('edit',   { path: '/edit' });
+        this.route('edit',   { path: '/edit' });
     });
   });
+  this.route('goals');
 });
 
 export default Router;

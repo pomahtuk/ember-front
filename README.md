@@ -9,6 +9,8 @@ A short introduction of this app could easily go here.
 * Implement tagging functionality
 * Implement search
 * Implement pagination on experiments list
+* Whole goals section
+* Authorization
 
 ## Prerequisites
 
