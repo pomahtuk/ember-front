@@ -2,27 +2,13 @@
 
 <div class="col s12">
   <ul class="collection">
-    <li class="collection-item avatar">
-      <i class="mdi-file-folder circle"></i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-    </li>
-    <li class="collection-item avatar">
-      <i class="mdi-action-assessment circle green"></i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-    </li>
-    <li class="collection-item avatar">
-      <i class="mdi-av-play-arrow circle red"></i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-    </li>
+
+    {{#each goal in controller}}
+      {{single-goal goal=goal}}
+    {{else}}
+      no goals :-(
+    {{/each}}
+
   </ul>
 </div>
 
