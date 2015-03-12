@@ -6,11 +6,31 @@
           <img src="/science-512.png" class="brand-logo-image">
           <span>Laborant</span>
         {{/link-to}}
-{{!--         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="components.html">Components</a></li>
-          <li><a href="javascript.html">JavaScript</a></li>
-        </ul> --}}
+        <a href="javascript:void(0);" data-activates="laborant-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {{#link-to "experiments.index" tagName="li" href=false}}
+            <a {{bind-attr href="view.href"}}>
+              Experimets
+            </a>
+          {{/link-to}}
+          {{#link-to "goals" tagName="li" href=false}}
+            <a {{bind-attr href="view.href"}}>
+              Goals
+            </a>
+          {{/link-to}}
+        </ul>
+        <ul class="side-nav" id="laborant-menu">
+          {{#link-to "experiments.index" tagName="li" href=false}}
+            <a {{bind-attr href="view.href"}}>
+              Experimets
+            </a>
+          {{/link-to}}
+          {{#link-to "goals" tagName="li" href=false}}
+            <a {{bind-attr href="view.href"}}>
+              Goals
+            </a>
+          {{/link-to}}
+        </ul>
       </div>
     </div>
   </div>

@@ -1,0 +1,17 @@
+.goals-toolbar {
+  height: 54px;
+  line-height: 52px;
+  padding: 0px 20px !important;
+  vertical-align: middle;
+
+  .goals-toolbar-header {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .goals-toolbar-controls {
+    & > a {
+      vertical-align: middle;
+    }
+  }
+}

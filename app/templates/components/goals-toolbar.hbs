@@ -1,0 +1,20 @@
+<div class="col s12">
+  <div class="goals-toolbar card-panel">
+    {{!-- this must be an input field --}}
+    <span class="goals-toolbar-header float-left">{{data.totalText}}</span>
+
+    <div class="goals-toolbar-controls float-right">
+      {{#link-to "experiments.create" class="no-margin btn waves-effect waves-light icon-adjustment-left hide-on-small-only"}}
+        <i class="left mdi-content-add"></i>
+        Create
+      {{/link-to}}
+      {{#link-to "experiments.create" class="btn-floating waves-effect waves-light waves-circle hide-on-med-and-up tooltipped" data-position="bottom" data-tooltip="Create"}}
+        <i class="left mdi-content-add"></i>
+      {{/link-to}}
+    </div>
+  </div>
+</div>
+
+
+
+{{yield}}
