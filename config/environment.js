@@ -16,6 +16,14 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    'simple-auth': {
+      store: 'simple-auth-session-store:cookie',
+      authenticator: 'authenticator:custom',
+      authorizer: 'authenticator:custom'
+    },
+    'simple-auth-cookie-store': {
+      cookieName: 'custom-cookie-name'
+    },
     sassOptions: {
       includePaths: ['bower_components/materialize/sass']
     },

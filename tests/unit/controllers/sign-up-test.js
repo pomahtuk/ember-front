@@ -3,13 +3,13 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('adapter:goal', 'GoalAdapter', {
+moduleFor('controller:sign-up', {
   // Specify the other units that are required for this test.
-  // needs: ['module:ember-data']
+  // needs: ['controller:foo']
 });
 
 // Replace this with your real tests.
 test('it exists', function(assert) {
-  var adapter = this.subject();
-  assert.ok(adapter);
+  var controller = this.subject();
+  assert.ok(controller);
 });

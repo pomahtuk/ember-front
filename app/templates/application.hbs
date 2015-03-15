@@ -8,28 +8,10 @@
         {{/link-to}}
         <a href="javascript:void(0);" data-activates="laborant-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          {{#link-to "experiments.index" tagName="li" href=false}}
-            <a {{bind-attr href="view.href"}}>
-              Experimets
-            </a>
-          {{/link-to}}
-          {{#link-to "goals" tagName="li" href=false}}
-            <a {{bind-attr href="view.href"}}>
-              Goals
-            </a>
-          {{/link-to}}
+          {{main-menu}}
         </ul>
         <ul class="side-nav" id="laborant-menu">
-          {{#link-to "experiments.index" tagName="li" href=false}}
-            <a {{bind-attr href="view.href"}}>
-              Experimets
-            </a>
-          {{/link-to}}
-          {{#link-to "goals" tagName="li" href=false}}
-            <a {{bind-attr href="view.href"}}>
-              Goals
-            </a>
-          {{/link-to}}
+          {{main-menu}}
         </ul>
       </div>
     </div>

@@ -5,7 +5,7 @@ import {
 
 moduleFor('adapter:application', 'ApplicationAdapter', {
   // Specify the other units that are required for this test.
-  // needs: ['serializer:foo']
+  // needs: ['module:ember-data']
 });
 
 // Replace this with your real tests.

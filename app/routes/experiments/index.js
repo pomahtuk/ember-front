@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import peivateRoute from 'tracking-server-ember/routes/private-route';
 
-export default Ember.Route.extend({
+export default peivateRoute.extend({
   model: function () {
     return this.store.find('experiment');
   }

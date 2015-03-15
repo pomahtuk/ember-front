@@ -1,0 +1,28 @@
+{{#if session.isAuthenticated}}
+  {{#link-to "experiments.index" tagName="li" href=false}}
+    <a {{bind-attr href="view.href"}}>
+      Experimets
+    </a>
+  {{/link-to}}
+  {{#link-to "goals" tagName="li" href=false}}
+    <a {{bind-attr href="view.href"}}>
+      Goals
+    </a>
+  {{/link-to}}
+  <li>
+    <a href="javascript:void(0);" {{action "invalidateSession"}}>
+      Logout
+    </a>
+  </li>
+{{else}}
+  {{#link-to "login" tagName="li" href=false}}
+    <a {{bind-attr href="view.href"}}>
+      Login
+    </a>
+  {{/link-to}}
+  {{#link-to "sign-up" tagName="li" href=false}}
+    <a {{bind-attr href="view.href"}}>
+      Sign up
+    </a>
+  {{/link-to}}
+{{/if}}

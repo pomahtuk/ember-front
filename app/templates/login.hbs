@@ -1,0 +1,37 @@
+<h3 class="col s12">
+  Login
+</h3>
+
+{{! login form; the fields must be named "identification" and "password"; the controller action is "authenticate" }}
+<form {{action 'authenticate' on='submit'}} class="col s12">
+  <div class="card">
+    <br/>
+    <div class="row">
+      <div class="input-field col s12">
+        {{input value=identification}}
+        <label {{bind-attr class="identification:active"}} for="identification">Login</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        {{input value=password type='password'}}
+        <label {{bind-attr class="password:active"}} for="password">Password</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="right-align col s12">
+        {{#link-to "sign-up" class="waves-effect waves-light white-text btn green"}}
+          Sign up
+        {{/link-to}}
+        <label for="submitForm" class="waves-effect waves-light btn blue darken-3">
+          Submit
+          <i class="mdi-content-send right"></i>
+          <input id="submitForm" type="submit" value="go" class="hidden" />
+        </label>
+      </div>
+    </div>
+
+  </div>
+</form>
