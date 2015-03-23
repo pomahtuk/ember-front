@@ -25,10 +25,18 @@ var userAuthRequset = function(data) {
 
 export default Base.extend({
   restore: function(data) {
-    var user = data.user;
-    return userAuthRequset({
-      username: user.username,
-      password: user.password
+    return new RSVP.Promise(function(resolve, reject) {
+      $.ajax({
+        method: 'GET',
+        url: 'http://localhost:3000/me',
+        xhrFields: {
+          withCredentials: true
+        }
+      }).success(function(data) {
+        resolve(data);
+      }).error(function() {
+        reject('error');
+      });
     });
   },
   authenticate: function(options) {
