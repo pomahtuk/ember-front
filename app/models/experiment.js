@@ -1,17 +1,8 @@
 import DS from 'ember-data';
 
-var attr = DS.attr,
-  Experiment;
-
-  // Mongoose model:
-  // name          : { type: String,   required: true, trim: true },
-  // description   : { type: String,   required: true, trim: true },
-  // tag           : { type: String,   required: true, trim: true },
-  // variantCount  : { type: Number,   required: true},
-  // trackPercent  : { type: Number,   required: true},
-  // fullOn        : { type: Boolean,  required: true, default: false},
-  // goal          : { type : Schema.ObjectId, ref : 'goal' },
-  // dateCreated   : { type: Date,     required: true, default: Date.now }
+var attr = DS.attr;
+var belongsTo = DS.belongsTo;
+var Experiment;
 
 Experiment = DS.Model.extend({
   name          : attr('string'),
@@ -24,7 +15,9 @@ Experiment = DS.Model.extend({
   dateCreated   : attr('date'),
   variants      : attr({
     columns: attr('array')
-  })
+  }),
+
+  project   : belongsTo('project')
 });
 
 export default Experiment;

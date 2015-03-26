@@ -1,19 +1,16 @@
 import DS from 'ember-data';
 
-var Goal,
-  attr = DS.attr;
+var Goal;
+var attr = DS.attr;
+var belongsTo = DS.belongsTo;
 
-// var goalSchema = new Schema({
-//   name          : { type: String,   required: true, trim: true },
-//   description   : { type: String,   required: true, trim: true },
-//   dateCreated   : { type: Date,     required: true, default: Date.now }
-// });
 
 Goal = DS.Model.extend({
   name          : attr('string'),
   description   : attr('string'),
   tag           : attr('string'),
-  dateCreated   : attr('date')
+  dateCreated   : attr('date'),
+  project       : belongsTo('project')
 });
 
 
