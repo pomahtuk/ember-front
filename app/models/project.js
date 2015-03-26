@@ -8,7 +8,9 @@ var Project;
 Project = DS.Model.extend({
   name          : attr('string'),
   description   : attr('string'),
-  tag           : attr('string'),
+  domain        : attr('string'),
+  createdAt     : attr('date'),
+  updatedAt     : attr('date'),
 
   experiments   : hasMany('experiment')
 });

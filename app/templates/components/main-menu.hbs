@@ -1,14 +1,14 @@
 {{#if session.isAuthenticated}}
-  {{#link-to "experiments.index" tagName="li" href=false}}
+  {{#link-to "experiments" tagName="li" href=false}}
     <a {{bind-attr href="view.href"}}>
       Experimets
     </a>
   {{/link-to}}
-  {{#link-to "goals" tagName="li" href=false}}
+{{!--   {{#link-to "goals" tagName="li" href=false}}
     <a {{bind-attr href="view.href"}}>
       Goals
     </a>
-  {{/link-to}}
+  {{/link-to}} --}}
   <li>
     <a href="javascript:void(0);" {{action "invalidateSession"}}>
       Logout
