@@ -24,7 +24,7 @@ var userAuthRequset = function(data) {
 };
 
 export default Base.extend({
-  restore: function(data) {
+  restore: function() {
     return new RSVP.Promise(function(resolve, reject) {
       $.ajax({
         method: 'GET',
