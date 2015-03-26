@@ -14,7 +14,8 @@
     "qunit": "~1.17.1",
     "materialize": "~0.95.0",
     "ember-simple-auth": "0.7.3",
-    "moment": "~2.9.0"
+    "moment": "~2.9.0",
+    "c3": "~0.4.10"
   },
   "resolutions": {
     "jquery": ">=2.1.1"

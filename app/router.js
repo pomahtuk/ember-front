@@ -12,6 +12,9 @@ Router.map(function() {
         this.route('edit',   { path: '/edit' });
     });
   });
+  this.resource('projects', function () {
+
+  });
   this.route('goals');
   this.route('login');
   this.route('sign-in');
