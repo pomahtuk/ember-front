@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('experiment', 'Experiment', {
+moduleForModel('project', 'Project', {
   // Specify the other units that are required for this test.
-  needs: ['model:Project']
+  needs: ['model:Experiment']
 });
 
 test('it exists', function(assert) {

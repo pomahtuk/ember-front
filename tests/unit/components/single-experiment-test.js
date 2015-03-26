@@ -10,13 +10,13 @@ moduleForComponent('single-experiment', 'SingleExperimentComponent', {
 
 test('it renders', function(assert) {
   assert.expect(1);
-  assert.ok(true);
+  assert.equal(true, true);
 
   // // creates the component instance
   // var component = this.subject();
   // assert.equal(component._state, 'preRender');
 
-  // // appends the component to the page
-  // this.append();
+  // // renders the component to the page
+  // this.render();
   // assert.equal(component._state, 'inDOM');
 });

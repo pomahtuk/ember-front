@@ -5,7 +5,7 @@ import {
 
 moduleForComponent('single-goal', {
   // specify the other units that are required for this test
-  // needs: ['component:foo', 'helper:bar']
+  needs: ['helper:format-date']
 });
 
 test('it renders', function(assert) {
