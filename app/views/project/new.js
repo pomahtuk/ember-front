@@ -1,3 +1,4 @@
-import laborantView from 'tracking-server-ember/views/laborant-view';
+import Ember from 'ember';
 
-export default laborantView.extend({});
+export default Ember.View.extend({
+});

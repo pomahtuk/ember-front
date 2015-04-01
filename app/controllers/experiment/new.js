@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   isCreateAction: true,
   actions: {
     save: function () {
@@ -15,6 +15,6 @@ export default Ember.ObjectController.extend({
       experiment.deleteRecord();
       experiment.save();
       this.transitionToRoute('experiments');
-    }    
+    }
   }
 });

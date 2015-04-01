@@ -1,4 +1,7 @@
-import Ember from 'ember';
+import laborantView from 'tracking-server-ember/views/laborant-view';
 
-export default Ember.View.extend({
+export default laborantView.extend({
+  didInsertElement: function() {
+    this._super();
+  }
 });
