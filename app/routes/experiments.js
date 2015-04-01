@@ -1,6 +1,6 @@
-import peivateRoute from 'tracking-server-ember/routes/private-route';
+import privateRoute from 'tracking-server-ember/routes/private-route';
 
-export default peivateRoute.extend({
+export default privateRoute.extend({
   model: function () {
   	// return this.modelFor('projects.show').get('experiments');
     return this.store.find('experiment');

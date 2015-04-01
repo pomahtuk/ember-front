@@ -18,11 +18,12 @@ Router.map(function() {
 
     // nested experiments
     this.resource('experiments',  {path: '/experiments'});
-    this.resource('experiments.new',  {path:'/experiment/new'});
+    this.resource('experiment.new',  {path:'/experiment/new'});
     this.resource('experiment', {path: '/experiment/:experiment_id'}, function() {
         this.route('edit',   {path: '/edit'});
     });
 
+    this.route('new');
   });
 
   this.route('login');

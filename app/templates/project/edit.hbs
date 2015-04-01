@@ -1,0 +1,53 @@
+{{!--     
+	name          : { type: DataTypes.STRING, allowNull: false },
+    description   : { type: DataTypes.STRING, allowNull: false },
+    domain        : { type: DataTypes.STRING, allowNull: false } 
+--}}
+
+
+<h3 class="col s12">
+  {{#if isCreateAction}}
+    New project
+  {{else}}
+    Editing project
+  {{/if}}
+</h3>
+
+<form class="col s12">
+  <div class="card">
+    <br/>
+    <div class="row">
+      <div class="input-field col s12">
+        {{input value=name}}
+        <label {{bind-attr class="name:active"}}>Project Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{input value=domain}}
+        <label {{bind-attr class="domain:active"}}>Project domain</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        {{textarea value=description class="materialize-textarea"}}
+        <label {{bind-attr class="description:active"}}>Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="right-align col s12">
+        <a href="javascript:void(0)" {{action "cancel"}} class="waves-effect waves-light white-text btn red">
+          Cancel
+        </a>
+        <label for="submitForm" {{action "save"}} class="waves-effect waves-light btn blue darken-3">
+          Save
+          <i class="mdi-content-send right"></i>
+          <input id="submitForm" type="submit" value="go" class="hidden" />
+        </label>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+{{outlet}}

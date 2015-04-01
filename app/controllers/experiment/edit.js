@@ -8,9 +8,9 @@ export default Ember.ObjectController.extend({
       experiment.save();
       this.transitionToRoute('experiment', experiment);
     },
-	cancel: function () {
+  	cancel: function () {
       var experiment = this.get('model');
       this.transitionToRoute('experiment', experiment);
-	}   
+  	}   
   }
 });

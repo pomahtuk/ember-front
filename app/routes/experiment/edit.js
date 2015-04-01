@@ -1,6 +1,6 @@
-import peivateRoute from 'tracking-server-ember/routes/private-route';
+import privateRoute from 'tracking-server-ember/routes/private-route';
 
-export default peivateRoute.extend({
+export default privateRoute.extend({
   model: function (params, transition) {
   	// this will solve empty model on second edit
   	var targetParams = transition.params['experiment'];

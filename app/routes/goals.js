@@ -1,7 +1,6 @@
-import Ember from 'ember';
-import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
+import privateRoute from 'tracking-server-ember/routes/private-route';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
+export default privateRoute.extend({
   model: function () {
     return this.store.find('goal');
   }
