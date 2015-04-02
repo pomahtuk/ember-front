@@ -2,11 +2,11 @@
   <div class="card">
     <div class="card-content">
       {{#link-to 'project.index' project class="card-title blue-text"}}{{project.name}}{{/link-to}}
-      <span class="card-minor-details">({{format-date project.dateCreated}})</span>
+      <span class="card-minor-details">({{format-date project.createdAt}})</span>
       <p>{{project.description}}</p>
     </div>
     <div class="card-action custom-actions-style align-right">
-      {{#link-to 'experiment.edit' experiment class="waves-effect waves-circle waves-light btn-floating blue darken-3 tooltipped" data-position="bottom" data-tooltip="Edit"}}
+      {{#link-to 'project.edit' project class="waves-effect waves-circle waves-light btn-floating blue darken-3 tooltipped" data-position="bottom" data-tooltip="Edit"}}
         <i class="left mdi-action-settings"></i>
       {{/link-to}}
     </div>

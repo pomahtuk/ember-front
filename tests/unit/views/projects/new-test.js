@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('view:project/new');
+moduleFor('view:projects/new');
 
 // Replace this with your real tests.
 test('it exists', function(assert) {

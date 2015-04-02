@@ -18,20 +18,20 @@
     <br/>
     <div class="row">
       <div class="input-field col s12">
-        {{input value=name}}
-        <label {{bind-attr class="name:active"}}>Project Name</label>
+        {{input value=model.name}}
+        <label {{bind-attr class="model.name:active"}}>Project Name</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        {{input value=domain}}
-        <label {{bind-attr class="domain:active"}}>Project domain</label>
+        {{input value=model.domain}}
+        <label {{bind-attr class="model.domain:active"}}>Project domain</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        {{textarea value=description class="materialize-textarea"}}
-        <label {{bind-attr class="description:active"}}>Description</label>
+        {{textarea value=model.description class="materialize-textarea"}}
+        <label {{bind-attr class="model.description:active"}}>Description</label>
       </div>
     </div>
     <div class="row">

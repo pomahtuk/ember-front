@@ -1,6 +1,8 @@
 {{!-- {{experiments-toolbar data=controller}} --}}
 
-{{#each project in controller}}
+{{outlet}}
+
+{{#each project in controller.listProjects}}
   {{single-project project=project}}
 {{else}}
   no projects :-(
@@ -19,6 +21,3 @@
     <i class="mdi-navigation-chevron-right"></i></a>
   </li>
 </ul> --}}
-
-
-{{outlet}}

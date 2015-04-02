@@ -7,8 +7,10 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
 
-  this.resource('projects', {path:'/projects' });
-  this.resource('project.new', {path:'/project/new'});
+  this.resource('projects', {path:'/projects' }, function() {
+    this.route('new');
+  });
+  // this.resource('projects.new', {path:'/projects/new'});
   this.resource('project', {path:'/project/:project_id'}, function() {
     this.route('edit', {path: '/edit'});
 
@@ -17,8 +19,10 @@ Router.map(function() {
     this.resource('goal.new', {path:'/goal/new'});
 
     // nested experiments
-    this.resource('experiments', {path: '/experiments'});
-    this.resource('experiment.new', {path:'/experiment/new'});
+    this.resource('experiments', {path: '/experiments'}, function() {
+      this.route('new');
+    });
+    this.resource('experiments.new', {path:'/experiments/new'});
     this.resource('experiment', {path: '/experiment/:experiment_id'}, function() {
       this.route('edit', {path: '/edit'});
     });

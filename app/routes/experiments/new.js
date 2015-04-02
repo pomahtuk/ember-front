@@ -6,8 +6,8 @@ export default privateRoute.extend({
   },
 
   renderTemplate: function(){
-    this.render('experiment.new', {
-      controller: 'experiment/new'
+    this.render('experiment.edit', {
+      controller: 'experiments/new'
     });
   }
 });
