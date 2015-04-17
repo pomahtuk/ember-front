@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host: 'http://localhost:3000',
+  host: 'http://laborant-pomahtuk.rhcloud.com/',
   ajax: function(url, method, hash) {
     hash = hash || {}; // hash may be undefined
     hash.crossDomain = true;

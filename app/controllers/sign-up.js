@@ -14,7 +14,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
       };
       $.ajax({
         method: 'POST',
-        url: 'http://localhost:3000/sign-up',
+        url: 'http://laborant-pomahtuk.rhcloud.com/sign-up',
         xhrFields: {withCredentials: true},
         data: data
       }).success(function() {

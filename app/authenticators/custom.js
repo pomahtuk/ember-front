@@ -10,7 +10,7 @@ var userAuthRequset = function(data) {
   return new RSVP.Promise(function(resolve, reject) {
     $.ajax({
       method: 'POST',
-      url: 'http://localhost:3000/login',
+      url: 'http://laborant-pomahtuk.rhcloud.com/login',
       data: data,
       xhrFields: {
         withCredentials: true
@@ -28,7 +28,7 @@ export default Base.extend({
     return new RSVP.Promise(function(resolve, reject) {
       $.ajax({
         method: 'GET',
-        url: 'http://localhost:3000/me',
+        url: 'http://laborant-pomahtuk.rhcloud.com/me',
         xhrFields: {
           withCredentials: true
         }
@@ -51,7 +51,7 @@ export default Base.extend({
     return new RSVP.Promise(function(resolve, reject) {
       $.ajax({
         method: 'GET',
-        url: 'http://localhost:3000/logout',
+        url: 'http://laborant-pomahtuk.rhcloud.com/logout',
         xhrFields: {
           withCredentials: true
         }
